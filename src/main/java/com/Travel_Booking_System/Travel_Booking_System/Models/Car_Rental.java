@@ -22,5 +22,5 @@ public class Car_Rental {
     String rental_period;
     Double price;
     boolean availability;
-    
+
 }
