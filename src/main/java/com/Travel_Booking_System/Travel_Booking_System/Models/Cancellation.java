@@ -17,5 +17,5 @@ public class Cancellation {
     Long cancellation_id;
     String date;
     String reason;
-    
+
 }
