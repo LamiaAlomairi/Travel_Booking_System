@@ -18,5 +18,5 @@ public class Booking {
     String date;
     Double price;
     String confirmation_number;
-    
+
 }
