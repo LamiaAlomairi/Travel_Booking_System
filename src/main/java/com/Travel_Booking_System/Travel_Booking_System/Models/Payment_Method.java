@@ -1,10 +1,12 @@
 package com.Travel_Booking_System.Travel_Booking_System.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -20,4 +22,7 @@ public class Payment_Method {
     String expiration_date;
     String security_code;
 
+    @OneToMany(mappedBy = "payment_method")
+    @JsonIgnore
+    private List<Customer> customers;
 }

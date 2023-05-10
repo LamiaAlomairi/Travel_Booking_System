@@ -18,4 +18,7 @@ public class Cancellation {
     String date;
     String reason;
 
+    @OneToOne
+    @JoinColumn(name = "booking_id", referencedColumnName = "booking_id")
+    Booking booking;
 }

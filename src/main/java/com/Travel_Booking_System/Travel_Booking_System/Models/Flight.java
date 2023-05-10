@@ -1,10 +1,12 @@
 package com.Travel_Booking_System.Travel_Booking_System.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -24,4 +26,16 @@ public class Flight {
     Double price;
     boolean availability;
 
+    //one-to-many with bookings, reviews, and ratings
+    @OneToMany(mappedBy = "flight")
+    @JsonIgnore
+    private List<Booking> bookings;
+
+    @OneToMany(mappedBy = "flight")
+    @JsonIgnore
+    private List<Review> reviews;
+
+    @OneToMany(mappedBy = "flight")
+    @JsonIgnore
+    private List<Rating> ratings;
 }
